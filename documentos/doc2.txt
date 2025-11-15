@@ -1,0 +1,3 @@
+As estruturas de dados são essenciais para algoritmos.
+A ciência da computação utiliza árvores e tabelas hash.
+Programação eficiente requer conhecimento de estruturas.
