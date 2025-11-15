@@ -1,0 +1,3 @@
+A estrutura de dados é fundamental na ciência da computação. 
+Algoritmos eficientes dependem de boas estruturas de dados.
+Tabelas hash e árvores AVL são exemplos importantes.
