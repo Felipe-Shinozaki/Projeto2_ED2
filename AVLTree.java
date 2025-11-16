@@ -1,5 +1,6 @@
 import java.util.*;
 
+// Implementação da árvore AVL
 public class AVLTree {
     private class No {
         double chave;
@@ -25,10 +26,12 @@ public class AVLTree {
         this.rotacoesDuplas = 0;
     }
     
+    // Método de inserção
     public void inserir(double similaridade, Resultado resultado) {
         raiz = inserirRec(raiz, similaridade, resultado);
     }
     
+    // Inserção recursiva com rebalanceamento
     private No inserirRec(No no, double chave, Resultado resultado) {
         if (no == null) {
             return new No(chave, resultado);
@@ -43,9 +46,10 @@ public class AVLTree {
             no.direita = inserirRec(no.direita, chave, resultado);
         }
         
-        no.altura = 1 + Math.max(altura(no.esquerda), altura(no.direita));
-        int balance = getBalance(no);
+        no.altura = 1 + Math.max(altura(no.esquerda), altura(no.direita)); // Atualiza a altura
+        int balance = getBalance(no); // Fator de balanceamento
         
+        // Rotações
         if (balance > 1 && chave < no.esquerda.chave) {
             rotacoesSimples++;
             return rotacaoDireita(no);
@@ -79,6 +83,7 @@ public class AVLTree {
         return no == null ? 0 : altura(no.esquerda) - altura(no.direita);
     }
     
+    // Rotações AVL
     private No rotacaoDireita(No y) {
         No x = y.esquerda;
         No T2 = x.direita;
@@ -99,6 +104,7 @@ public class AVLTree {
         return y;
     }
     
+    // Devolve o top-K resultados com maior similaridade
     public List<Resultado> getTopK(int k) {
         List<Resultado> todos = new ArrayList<>();
         percorrerEmOrdemDecrescente(raiz, todos);

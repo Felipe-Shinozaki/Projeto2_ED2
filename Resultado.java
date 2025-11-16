@@ -1,3 +1,4 @@
+// Classe que representa o par de documentos e a similaridade
 public class Resultado {
     private String doc1;
     private String doc2;

@@ -6,8 +6,8 @@ import java.util.*;
  * Verificador de Similaridade de Textos
  * Estrutura de Dados II - Universidade Presbiteriana Mackenzie
  * 
- * Autores: [Seu Nome e RA]
- *          [Nome do Colega e RA]
+ * Autores: Felipe Shinozaki - 
+ *          Pedro de Souza Zequi - 10419805
  */
 public class Main {
     private static PrintWriter logWriter;

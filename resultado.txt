@@ -1,6 +1,6 @@
 === VERIFICADOR DE SIMILARIDADE DE TEXTOS ===
 Total de documentos processados: 3
 
-Comparando: doc1.txt <-> doc2.txt
-Similaridade calculada: 0.45
+Comparando: doc1.txt <-> doc3.txt
+Similaridade calculada: 0.11
 Métrica utilizada: Cosseno

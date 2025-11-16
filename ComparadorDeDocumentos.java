@@ -1,7 +1,9 @@
 import java.util.*;
 
+// Classe responsável por calcular a similaridade entre os documentos
 public class ComparadorDeDocumentos {
     
+    // Calcula a similiaridade utilizando o Cosseno
     public double calcularSimilaridade(Documento doc1, Documento doc2) {
         Set<String> todasPalavras = new HashSet<>();
         todasPalavras.addAll(doc1.getPalavras());
@@ -30,6 +32,7 @@ public class ComparadorDeDocumentos {
             return 0.0;
         }
         
+        // Retorna o cosseno
         return produtoEscalar / (magnitudeDoc1 * magnitudeDoc2);
     }
 }

@@ -1,9 +1,11 @@
 import java.util.*;
 
+// Implementação da tabela hash
 public class HashTable {
     private static final int TIPO_HASH_DIVISAO = 1;
     private static final int TIPO_HASH_MULTIPLICATIVO = 2;
     
+    // Classe Entry que representa uma entrada da tabela
     private static class Entry {
         String chave;
         Integer valor;
@@ -31,6 +33,7 @@ public class HashTable {
         this.colisoes = 0;
     }
     
+    // Função hash por divisão
     private int hashDivisao(String chave) {
         int hash = 0;
         for (int i = 0; i < chave.length(); i++) {
@@ -39,6 +42,7 @@ public class HashTable {
         return Math.abs(hash);
     }
     
+    // Função hash por multiplicação
     private int hashMultiplicativo(String chave) {
         long hash = 0;
         for (int i = 0; i < chave.length(); i++) {
@@ -57,6 +61,7 @@ public class HashTable {
         }
     }
     
+    // Insere ou atualiza uma chave na tabela
     public void put(String chave, Integer valor) {
         int indice = hash(chave);
         Entry entrada = tabela[indice];
@@ -84,6 +89,7 @@ public class HashTable {
         }
     }
     
+    // Devolve o valor associado à chave
     public Integer get(String chave) {
         int indice = hash(chave);
         Entry entrada = tabela[indice];
@@ -97,6 +103,7 @@ public class HashTable {
         return null;
     }
     
+    // Devolve as chaves armazenadas
     public Set<String> getChaves() {
         Set<String> chaves = new HashSet<>();
         for (int i = 0; i < tamanho; i++) {
@@ -109,6 +116,7 @@ public class HashTable {
         return chaves;
     }
     
+    // Duplica o tamanho da tabela e reinsere os elementos
     private void rehash() {
         Entry[] tabelaAntiga = tabela;
         tamanho = proximoPrimo(tamanho * 2);
@@ -131,6 +139,7 @@ public class HashTable {
         return n;
     }
     
+    // Verfica sem um número é primo
     private boolean ehPrimo(int n) {
         if (n <= 1) return false;
         if (n <= 3) return true;
