@@ -6,7 +6,7 @@ import java.util.*;
  * Verificador de Similaridade de Textos
  * Estrutura de Dados II - Universidade Presbiteriana Mackenzie
  * 
- * Autores: Felipe Shinozaki - 
+ * Autores: Felipe Hideki Rodrigues Shinozaki - 10438584
  *          Pedro de Souza Zequi - 10419805
  */
 public class Main {

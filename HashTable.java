@@ -33,6 +33,24 @@ public class HashTable {
         this.colisoes = 0;
     }
     
+    // Usadas para testar o desempenho
+    public void usarHashDivisao() {
+        this.tipoHash = TIPO_HASH_DIVISAO;
+    }
+
+    public void usarHashMultiplicativo() {
+        this.tipoHash = TIPO_HASH_MULTIPLICATIVO;
+    }
+
+    public String getDescricaoTipoHash() {
+        if (tipoHash == TIPO_HASH_DIVISAO) {
+            return "Divisão";
+        } else {
+            return "Multiplicativo";
+        }
+    }
+    // ----------------------------------
+
     // Função hash por divisão
     private int hashDivisao(String chave) {
         int hash = 0;
